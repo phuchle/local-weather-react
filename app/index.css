@@ -19,6 +19,44 @@ html, body {
   flex-direction: column;
   height: 100%;
   width: 100%;
+  background-size: cover;
+}
+
+
+.navbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  min-height: 2em;
+  padding: 20px;
+  background-color: #f4552a;
+}
+
+.navbar .button {
+  margin: 0 10px;
+}
+
+ .searchbar {
+  display: flex;
+  padding-right: 40px;
+}
+
+.title {
+  margin: 0;
+  color: #fff;
+}
+
+.home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.home .button {
+  margin-top: 10px;
 }
 
 .heading {
@@ -31,7 +69,7 @@ html, body {
 input {
   padding: 5px;
   border-radius: 5px;
-  width: 200px;
+  width: 150px;
 }
 
 .button {
@@ -40,11 +78,10 @@ input {
   border: none;
   font-size: 16px;
   border-radius: 3px;
-  width: 200px;
+  width: 120px;
   text-align: center;
   display: block;
   padding: 7px 0;
-  margin: 10px auto;
 }
 
 .button:active {
