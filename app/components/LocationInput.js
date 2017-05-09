@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import api from '../utils/api';
 
 class LocationInput extends React.Component {
   constructor(props) {
@@ -7,7 +8,7 @@ class LocationInput extends React.Component {
 
     this.state = {
       location: ''
-    }
+    };
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -23,8 +24,8 @@ class LocationInput extends React.Component {
   }
   handleSubmit(event) {
     event.preventDefault();
-    console.log(this.props.location);
 
+    
   }
   render () {
     return (
