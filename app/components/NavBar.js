@@ -1,14 +1,13 @@
 import React from 'react';
+import LocationInput from './LocationInput';
 
 class NavBar extends React.Component {
+
   render() {
     return (
       <div className='navbar'>
-        <h1 className='title'>What the weather?</h1>
-        <div className='searchbar'>
-          <input type='text' placeholder='San Jose, CA' />
-          <button className='button'>Get Weather</button>
-        </div>
+        <h1 className='title'>What's the weather?</h1>
+        <LocationInput className='searchbar'/>
       </div>
     )
   }
