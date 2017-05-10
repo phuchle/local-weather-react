@@ -7,7 +7,7 @@ class LocationInput extends React.Component {
     super(props);
 
     this.state = {
-      location: ''
+      city: ''
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -18,46 +18,42 @@ class LocationInput extends React.Component {
 
     this.setState(() => {
       return {
-        location: value
+        city: value
       }
     });
   }
   handleSubmit(event) {
     event.preventDefault();
+    console.log(this.state.city);
 
-    
+    this.props.onSubmitLocation(this.state.city);
   }
   render () {
     return (
-      <div>
-        <form className={this.props.className} onSubmit={this.handleSubmit}>
-          <input
-            type='text'
-            placeholder='San Jose, CA'
-            value={this.state.location}
-            autoComplete='off'
-            onChange={this.handleChange}
-          />
-          <button
-            type='submit'
-            className='button'
-            disabled={!this.state.location}
-            >
-              Get Weather
-            </button>
+      <div className={this.props.className}>
+        <input
+          type='text'
+          placeholder='San Jose, CA'
+          value={this.state.location}
+          autoComplete='off'
+          onChange={this.handleChange}
+        />
+        <button
+          onClick={this.handleSubmit}
+          className='button'
+          disabled={!this.state.city}
+          >
+            Get Weather
+        </button>
 
-          </form>
-        </div>
+      </div>
     )
   }
 }
 
-LocationInput.defaultProps = {
-  className: ''
-}
-
 LocationInput.propTypes = {
-  className: PropTypes.string.isRequired
+  className: PropTypes.string.isRequired,
+  onSubmitLocation: PropTypes.func.isRequired
 }
 
 module.exports = LocationInput;
