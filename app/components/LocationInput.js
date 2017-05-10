@@ -30,7 +30,7 @@ class LocationInput extends React.Component {
   }
   render () {
     return (
-      <div className={this.props.className}>
+      <div className='input-container' style={{flexDirection: this.props.direction}}>
         <input
           type='text'
           placeholder='San Jose, CA'
@@ -52,7 +52,7 @@ class LocationInput extends React.Component {
 }
 
 LocationInput.propTypes = {
-  className: PropTypes.string.isRequired,
+  direction: PropTypes.string.isRequired,
   onSubmitLocation: PropTypes.func.isRequired
 }
 

@@ -11,13 +11,13 @@ class App extends React.Component {
   render() {
     return (
       <Router>
-        <div className='container' style={{backgroundImage: "url('app/images/pattern.svg')"}}>
+        <div className='container'>
           <Route render={(props) => {
             return (
               <div className='navbar'>
                 <h1 className='title'>What's the weather?</h1>
                 <LocationInput
-                  className='searchbar'
+                  direction='row'
                   onSubmitLocation={(city) => {
                     props.history.push({
                       pathname: 'forecast',
@@ -31,10 +31,10 @@ class App extends React.Component {
 
           <Route exact path='/' render={(props) => {
             return (
-              <div className='home'>
-                <p className='heading'>Enter a City and State</p>
+              <div className='home' style={{backgroundImage: "url('app/images/pattern.svg')"}}>
+              <p className='heading'>Enter a City and State</p>
                 <LocationInput
-                  className='home'
+                  direction='column'
                   onSubmitLocation={(city) => {
                     props.history.push({
                       pathname: 'forecast',
