@@ -65,6 +65,7 @@ html, body {
 .weather-container {
   display: flex;
   flex-direction: row;
+  align-items: center;
   justify-content: space-around;
   flex-wrap: wrap;
   width: 100%;
@@ -75,6 +76,14 @@ html, body {
   flex-direction: column;
   align-items: center;
   margin: 10px;
+  height: 200px;
+}
+
+.details {
+  font-size: 2.5em;
+  text-align: center;
+  padding: 20px;
+  height: 100%;
 }
 
 .heading {

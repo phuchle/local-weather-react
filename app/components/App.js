@@ -1,6 +1,7 @@
 import React from 'react';
 import Forecast from './Forecast';
 import LocationInput from './LocationInput';
+import Details from './Details';
 import {
   BrowserRouter as Router,
   Link,
@@ -49,6 +50,7 @@ class App extends React.Component {
             )
           }} />
           <Route path='/forecast' component={Forecast} />
+          <Route path='/details' component={Details} />
         </div>
       </Router>
     )
