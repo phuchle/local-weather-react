@@ -3,6 +3,7 @@ import Forecast from './Forecast';
 import LocationInput from './LocationInput';
 import {
   BrowserRouter as Router,
+  Link,
   Route,
   Switch
 } from 'react-router-dom';
@@ -15,7 +16,9 @@ class App extends React.Component {
           <Route render={(props) => {
             return (
               <div className='navbar'>
-                <h1 className='title'>What's the weather?</h1>
+                <Link style={{textDecoration: 'none'}} to='/'>
+                  <h1 className='title'>What's the weather?</h1>
+                </Link>
                 <LocationInput
                   direction='row'
                   onSubmitLocation={(city) => {
