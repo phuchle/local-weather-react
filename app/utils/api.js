@@ -2,21 +2,54 @@ import axios from 'axios';
 
 let key = 'fbbc04106f66a90adfc6b9c9b3fac31e';
 
+function parseData(response) {
+  let days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+  let months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+
+  let dates = response.data.list.map((obj) => {
+    let tempDate = new Date(obj.dt * 1000);
+    let dayIndex = tempDate.getDay();
+    let monthIndex = tempDate.getMonth();
+    let date = tempDate.getDate();
+    let icon = obj.weather[0].icon;
+
+    return {
+      date: days[dayIndex] + ', ' + months[monthIndex] + ' ' + date,
+      icon: icon
+    }
+  });
+
+  addDetails(dates, response);
+  return dates;
+}
+
+function addDetails(array, response) {
+  return array.forEach((obj, index) => {
+    let currData = response.data.list[index];
+
+    obj['details'] = {
+      description: currData.weather[0].description,
+      minTemp: currData.temp.min,
+      maxTemp: currData.temp.max,
+      humidity: currData.humidity
+    }
+  });
+}
+
 module.exports = {
   fetchCurrentWeather: (cityName) => {
     let encodedURI = window.encodeURI('http://api.openweathermap.org/data/2.5/weather?q=' + cityName + '&type=accurate&units=imperial&APPID=' + key);
 
-    axios.get(encodedURI)
+    return axios.get(encodedURI)
       .then((response) => {
-        console.log(response.request.responseText);
+        return response.data;
       });
   },
+  // returns an object with the needed data
   fetchFiveDayForecast: (cityName) => {
     let encodedURI = window.encodeURI('http://api.openweathermap.org/data/2.5/forecast/daily?q=' + cityName + '&type=accurate&units=imperial&APPID=' + key + '&cnt=5');
 
-    axios.get(encodedURI)
-      .then((response) => {
-        console.log(response.request.responseText);
-      });
+    return axios.get(encodedURI)
+      .then(parseData);
   }
 }

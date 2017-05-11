@@ -19,7 +19,6 @@ html, body {
   flex-direction: column;
   height: 100%;
   width: 100%;
-  background-size: cover;
 }
 
 .input-container {
@@ -53,8 +52,29 @@ html, body {
   height: 100%;
 }
 
-.home .button {
-  margin-top: 10px;
+.forecast {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 20px;
+  width: 100%;
+  height: 100%;
+}
+
+.weather-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.weather-preview {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px;
 }
 
 .heading {

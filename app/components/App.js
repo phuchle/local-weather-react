@@ -21,7 +21,7 @@ class App extends React.Component {
                   onSubmitLocation={(city) => {
                     props.history.push({
                       pathname: 'forecast',
-                      search: '?city' + city
+                      search: `?city=` + city
                     })
                   }}
                 />
@@ -38,7 +38,7 @@ class App extends React.Component {
                   onSubmitLocation={(city) => {
                     props.history.push({
                       pathname: 'forecast',
-                      search: '?city' + city
+                      search: `?city=` + city
                     });
                   }}
                 />
