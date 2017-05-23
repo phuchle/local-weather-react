@@ -24,7 +24,6 @@ class LocationInput extends React.Component {
   }
   handleSubmit(event) {
     event.preventDefault();
-    console.log(this.state.city);
 
     this.props.onSubmitLocation(this.state.city);
   }

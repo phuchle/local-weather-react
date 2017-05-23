@@ -1,10 +1,10 @@
 import axios from 'axios';
 
-let key = 'fbbc04106f66a90adfc6b9c9b3fac31e';
+const key = 'fbbc04106f66a90adfc6b9c9b3fac31e';
 
 function parseData(response) {
-  let days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-  let months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+  const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+  const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 
   let dates = response.data.list.map((obj) => {
     let tempDate = new Date(obj.dt * 1000);
