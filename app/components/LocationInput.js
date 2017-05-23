@@ -56,4 +56,4 @@ LocationInput.propTypes = {
   onSubmitLocation: PropTypes.func.isRequired
 }
 
-module.exports = LocationInput;
+export default LocationInput;

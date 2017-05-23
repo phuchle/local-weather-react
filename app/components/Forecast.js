@@ -83,4 +83,4 @@ class Forecast extends React.Component {
   }
 }
 
-module.exports = Forecast;
+export default Forecast;
