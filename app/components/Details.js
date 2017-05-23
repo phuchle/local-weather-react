@@ -5,7 +5,7 @@ import queryString from 'query-string';
 function Details(props) {
   return (
     <div className='details'>
-      <img width='75%' src={'./app/images/weather-icons/' + props.location.state.icon + '.svg'} />
+      <img height='75px' src={'./app/images/weather-icons/' + props.location.state.icon + '.svg'} />
       <p>{queryString.parse(props.location.search).city}</p>
       <p>{props.location.state.date}</p>
       <p>{props.location.state.details.description}</p>

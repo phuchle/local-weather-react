@@ -69,7 +69,7 @@ class Forecast extends React.Component {
                   state: day
                 }}>
               <div className='weather-preview'>
-                  <img width='100%' height='100%' src={'./app/images/weather-icons/' + day.icon + '.svg'} />
+                  <img width='50%' height='50%' src={'./app/images/weather-icons/' + day.icon + '.svg'} />
                   <h2>
                     {day.date}
                   </h2>
